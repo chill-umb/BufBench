@@ -1,0 +1,27 @@
+database:
+  host: localhost
+  port: 5432
+  name: bgbenchdb
+  user: bgbench
+  password: bgbench123
+
+workload:
+  type: chbenchmark
+  scale: 1
+  clients: 4
+  threads: 2
+  duration: 60
+  chbenchmark:
+    analytical_threads: 2
+
+postgresql:
+  shared_buffers: 128MB
+  checkpoint_timeout: 5min
+  checkpoint_completion_target: 0.9
+  autovacuum: on
+
+monitor:
+  interval: 1
+
+output:
+  results_dir: results/
