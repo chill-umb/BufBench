@@ -1,0 +1,21 @@
+database:
+  host: localhost
+  port: 5432
+  name: bgbenchdb
+  user: bgbench
+  password: bgbench123
+workload:
+  type: tatp
+  scale: 100
+  clients: 8
+  threads: 4
+  duration: 600
+postgresql:
+  shared_buffers: 500MB
+  checkpoint_timeout: 5min
+  checkpoint_completion_target: 0.9
+  autovacuum: on
+monitor:
+  interval: 1
+output:
+  results_dir: results/
