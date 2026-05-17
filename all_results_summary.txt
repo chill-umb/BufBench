@@ -1,0 +1,116 @@
+
+============================================================
+Run: tpcb_20260510_011224
+============================================================
+
+-- Database --
+  DB size:          915 MB
+
+-- Throughput --
+  TPS avg:          2987.12
+  TPS max:          5052.00
+  TPS min:          6.00
+
+-- Buffer Pool --
+  Hit rate avg:     94.13%
+  Hit rate min:     93.59%
+  Hit rate max:     96.03%
+  Eviction avg:     497.79 pages/s
+  Eviction max:     600.00 pages/s
+  Utilization avg:  100.00%
+  Dirty bufs avg:   9951
+  Avg usage count:  1.40
+
+-- Background Events --
+  Checkpoint events: 18
+  Vacuum events:     18
+
+run_id,total_txns,avg_latency,min_latency,max_latency,p50_latency,p95_latency,p99_latency,tps
+tpcb_20260510_011224,1752925,2.73,0.85,101.75,2.64,4.05,5.01,2921.54
+
+============================================================
+Run: tpcb_20260510_013750
+============================================================
+
+-- Database --
+  DB size:          908 MB
+
+-- Throughput --
+  TPS avg:          2871.47
+  TPS max:          4807.00
+  TPS min:          4.00
+
+-- Buffer Pool --
+  Hit rate avg:     94.34%
+  Hit rate min:     92.19%
+  Hit rate max:     94.69%
+  Eviction avg:     496.43 pages/s
+  Eviction max:     600.00 pages/s
+  Utilization avg:  100.00%
+  Dirty bufs avg:   9936
+  Avg usage count:  1.40
+
+-- Background Events --
+  Checkpoint events: 17
+  Vacuum events:     18
+
+run_id,total_txns,avg_latency,min_latency,max_latency,p50_latency,p95_latency,p99_latency,tps
+tpcb_20260510_013750,1689512,2.84,0.87,117.54,2.75,4.13,5.06,2815.85
+
+============================================================
+Run: tpcb_20260510_025033
+============================================================
+
+-- Database --
+  DB size:          1672 MB
+
+-- Throughput --
+  TPS avg:          2963.77
+  TPS max:          4935.00
+  TPS min:          7.00
+
+-- Buffer Pool --
+  Hit rate avg:     92.26%
+  Hit rate min:     75.06%
+  Hit rate max:     96.82%
+  Eviction avg:     495.97 pages/s
+  Eviction max:     500.00 pages/s
+  Utilization avg:  100.00%
+  Dirty bufs avg:   9713
+  Avg usage count:  1.25
+
+-- Background Events --
+  Checkpoint events: 25
+  Vacuum events:     14
+
+run_id,total_txns,avg_latency,min_latency,max_latency,p50_latency,p95_latency,p99_latency,tps
+tpcb_20260510_025033,1745426,2.75,0.87,107.29,2.66,4.03,5.0,2909.04
+
+============================================================
+Run: tpcb_20260510_033322
+============================================================
+
+-- Database --
+  DB size:          1667 MB
+
+-- Throughput --
+  TPS avg:          2879.22
+  TPS max:          6577.00
+  TPS min:          6.00
+
+-- Buffer Pool --
+  Hit rate avg:     92.43%
+  Hit rate min:     91.96%
+  Hit rate max:     96.03%
+  Eviction avg:     497.15 pages/s
+  Eviction max:     600.00 pages/s
+  Utilization avg:  100.00%
+  Dirty bufs avg:   9761
+  Avg usage count:  1.25
+
+-- Background Events --
+  Checkpoint events: 25
+  Vacuum events:     16
+
+run_id,total_txns,avg_latency,min_latency,max_latency,p50_latency,p95_latency,p99_latency,tps
+tpcb_20260510_033322,1689810,2.84,0.82,108.96,2.75,4.15,5.16,2816.35

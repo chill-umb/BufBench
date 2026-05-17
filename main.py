@@ -9,6 +9,8 @@ from workloads.tpcb import TPCBWorkload
 from workloads.ycsb import YCSBWorkload
 from workloads.tpcc import TPCCWorkload
 from workloads.chbenchmark import CHBenchmarkWorkload
+from workloads.tpch import TPCHWorkload
+from workloads.tatp import TATWorkload
 
 def load_config(path='config/tpcb_test.yaml'):
     with open(path, 'r') as f:
@@ -24,6 +26,10 @@ def get_workload(config):
         return TPCCWorkload(config)
     elif workload_type == 'chbenchmark':
         return CHBenchmarkWorkload(config)
+    elif workload_type == 'tpch':
+        return TPCHWorkload(config)
+    elif workload_type == 'tatp':
+        return TATWorkload(config)
     else:
         print(f"[Main] Unknown workload type: {workload_type}")
         sys.exit(1)
@@ -32,7 +38,6 @@ def main():
     config_path = sys.argv[1] if len(sys.argv) > 1 else 'config/tpcb_test.yaml'
     print(f"[Main] Loading config from {config_path}")
     config = load_config(config_path)
-
     workload = get_workload(config)
     runner   = BenchmarkRunner(config, workload)
 
@@ -54,6 +59,7 @@ def main():
 
     pattern = os.path.join(results_dir, f"summary_{workload_type}_*.csv")
     files   = sorted(glob.glob(pattern))
+    run_id  = None
     if files:
         latest = os.path.basename(files[-1])
         run_id = latest.replace('summary_', '').replace('.csv', '')
@@ -72,9 +78,13 @@ def main():
                 print(f"  {q:<8} {s['count']:>6} {s['avg_ms']:>10} {s['p50_ms']:>10} {s['p99_ms']:>10}")
             print("[CH] ─────────────────────────────────────────")
 
-    print("[Main] Running interference analysis...")
-    analyzer = InterferenceAnalyzer(config['output']['results_dir'])
-    analyzer.analyze(run_id)
+    if run_id:
+        print("[Main] Running interference analysis...")
+        analyzer = InterferenceAnalyzer(config['output']['results_dir'])
+        analyzer.analyze(run_id)
+    else:
+        print("[Main] Skipping interference analysis — no completed runs.")
+
     print("[Main] Done!")
 
 if __name__ == '__main__':
