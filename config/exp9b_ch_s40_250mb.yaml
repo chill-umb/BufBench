@@ -6,14 +6,14 @@ database:
   password: bgbench123
 workload:
   type: chbenchmark
-  scale: 10
+  scale: 40
   clients: 4
   threads: 2
   duration: 600
   chbenchmark:
     analytical_threads: 2
 postgresql:
-  shared_buffers: 500MB
+  shared_buffers: 250MB
   checkpoint_timeout: 5min
   checkpoint_completion_target: 0.9
   autovacuum: on
