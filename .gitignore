@@ -1,8 +1,14 @@
 results/
+Plots/
 *.csv
 *.pdf
 *.png
+*.log
 __pycache__/
 *.pyc
 .env
-summary*.log
+main.py.save
+all_results_summary.txt
+experiment_log.md
+config/
+!config/sample_*.yaml
